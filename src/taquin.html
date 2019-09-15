@@ -1,0 +1,47 @@
+<!-- Auteurs:
+Samuel GUIGUI
+Paul CHAFFANET - 1009543-->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu de taquin</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="taquin.js"> </script>
+    <link rel="stylesheet" type="text/css" href="taquin.css">
+</head>
+<body>
+<!-- Ici, pas d'action. Ni de bouton de type submit. Étant donnée que l'on peut utiliser seulement html, css, javascript
+et JQuery, aucun traitement PHP n'est effectué. Le risque d'erreur n'est donc pas écarté et on ne peut pleinement
+profité du typage des <input> (par la vérification de type).-->
+<form id="description">
+    <fieldset>
+        <legend>Description</legend>
+        <div>
+            <div id="labels">
+                <label for="img_src">URL de l'image: </label><br/>
+                <label for="nb_lignes">Nombre de lignes: </label><br/>
+                <label for="nb_colonnes">Nombre de colonnes: </label><br/>
+            </div>
+            <div id="inputs">
+                <input type="url" id="img_src" name="Image du jeu de taquin"
+                       value="http://www.zastavki.com/pictures/originals/2013/Photoshop_Image_of_the_horse_053857_.jpg"
+                       required><br/>
+                <input type="number" id="nb_lignes" name="Nombre de lignes" min="1" step="1" value="4" required><br/>
+                <input type="number" id="nb_colonnes" name="Nombre de colonnes" min="1" step="1" value="4" required><br/>
+            </div>
+        </div>
+        <div id="opts">
+            <input type="button" id="afficher" value="Afficher" ><br/>
+            <input type="button" id="brasser" value="Brasser les tuiles" ><br/>
+            <label for="affichage_num">Affichage des numéros</label><input type="checkbox" id="affichage_num"><br/>
+        </div>
+        <div id="deplacements">
+            <span>Déplacements: </span><span id="score">0</span>
+        </div>
+    </fieldset>
+</form>
+<table id="container"></table>
+</body>
+</html>

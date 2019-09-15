@@ -1,0 +1,35 @@
+/* Auteurs:
+Samuel GUIGUI
+Paul CHAFFANET - 1009543 */
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+fieldset{
+    margin: 12px 12px 18px;
+    padding: 6px;
+}
+
+fieldset div, fieldset div *:not(span) {
+    display: inline-block;
+}
+
+#deplacements {
+    float: right;
+    height: 100%;
+}
+
+#affichage_num {
+    margin-left: 3px;
+}
+
+#container {
+    width: 1028px;
+    height: 600px;
+    margin: auto;
+    display: block;
+}

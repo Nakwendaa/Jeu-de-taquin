@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+    <title>TP2 - IFT3225</title>
+</head>
+<body>
+<h1>Jeu de taquin</h1>
+<h3>Auteurs</h3>
+<ul>
+    <li>Paul CHAFFANET</li>
+    <li>Samuel GUIGUI</li>
+</ul>
+
+<h3>Liens du jeu de taquin</h3>
+<ul>
+    <li><a href="taquin.html">Page HTML du jeu de taquin</a></li>
+    <li><a href="taquin.css">Page CSS du jeu de taquin</a></li>
+    <li><a href="taquin.js">Page JS du jeu de taquin</a></li>
+</ul>
+
+<h3>Choix de représentations</h3>
+<p>
+    Les balises HTML sont sans contraintes (si ce n'est la contrainte sémantique) et sont entièrement personnalisables via
+    l'utilisation de CSS. Nous avons privilégier l'approche avec un élément bloc qui est un #container (la table) qui ne
+    pourra pas contenir un contenu plus grand que 1024px * 600px. Les tuiles devront occuper tout cet espace disponible,
+    peu importe la taille de l'image, le nombre de lignes et le nombre de colonnes. Ce container contient plusieurs
+    lignes de type bloc qui contiendront elles-mêmes plusieurs colonnes contenant les tuiles. Chaque tuile a une marge
+    de 1px.
+</p>
+<p>
+    Chaque tuile contient en background l'image source que l'usager souhaite afficher avec une taille 1024px * 600px
+    (qui est la taille du container par ailleurs). À l'affichage initial de l'image, on positionne le bg en fonction du
+    positionnement du bg des tuiles précédentes, c-à-d en effectuant des décalages de positionnement.
+    Les tuiles étant plus petites que le bg assigné, l'overflow sera en quelque sorte récupéré sur la tuile suivante.
+</p>
+<p>
+    Le bg des tuiles étant fixées, il est ensuite aisé de manipuler chaque tuile et de les swapper entre elles pour le
+    déroulement de la partie.
+</p>
+<p>
+    Malheureusement, nous n'avons pu implémenter les champs de manière satisfaisante pour prévenir les erreurs. Cela
+    requiert l'utilisation de PHP ou d'Ajax qui est proscrite dans ce TP. On ne profite pas pleinement du typage des
+    champs input. On ne profite également pas du bouton de type submit() puisque que nous n'utilisons pas PHP.
+    Ainsi, l'utilisation seule de javascript implique quelque limitations pour la gestion de formulaires indépendantes
+    de notre volonté.
+</p>
+<p>
+    En ce qui concerne le déroulement d'une partie, les déplacements de cases sont gelés tant que les tuiles ne sont pas
+    brassées (ce ne serait pas très logique d'autoriser le déplacement des tuiles et donc de permettre une victoire en
+    deux coups sans brassage). Toute nouvelle partie doit donc commencer par un brassage. Une partie peut être interrompue
+    par un nouvel affichage, ou un nouveau brassage et le score est remis à 0. La partie se termine lorsque l'image
+    est remise dans l'ordre. Il est alors nécessaire de brasser les tuiles pour recommencer une partie, ou d'afficher
+    une nouvelle image, puis de rebrasser les tuiles.
+</p>
+<p>
+    Les déplacements fléchés sont effectués selon cette logique: on ne déplace pas la case vide (la case grise). En réalité,
+    on tire une case pleine qui va dans une case vide. La nouvelle case vide est donc l'ancienne position de la case pleine tirée.
+    Ainsi, s'il existe une case pleine au dessus de la case vide, je tire la case pleine à l'aide de la flèche du bas.
+    La case pleine tirée prend donc la place de la case vide. La nouvelle case vide se retrouve donc une position plus haut.
+</p>
+
+<h3>Qu'est-ce que l'on a appris ?</h3>
+<p>
+    On a appris durant cet exercice à utiliser de manière basique mais efficiente JQuery (selectors et quelques fonctions
+    du types .html(), .text(), .val(), .css(), etc. ).<br/>
+    On a également appris à mieux maîtriser l'utilisation des background dans CSS.
+</p>
+
+</body>
+</html>
